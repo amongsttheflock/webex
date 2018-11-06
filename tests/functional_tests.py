@@ -1,5 +1,14 @@
 import unittest
 from selenium import webdriver
+from webex.application import app
+
+
+class BasicTestCase(unittest.TestCase):
+
+    def test_server_works(self):
+        client = app.test_client(self)
+        response = client.get('/', content_type='html/text')
+        self.assertEqual(response.status_code, 200)
 
 
 class NewVisitorTest(unittest.TestCase):
