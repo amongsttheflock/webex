@@ -1,6 +1,6 @@
 import unittest
 from selenium import webdriver
-from webex.application import app
+from webex import app
 
 
 class BasicTestCase(unittest.TestCase):
@@ -20,7 +20,7 @@ class NewVisitorTest(unittest.TestCase):
         self.browser.quit()
 
     def test_server_works(self):
-        self.browser.get('http://localhost:8000')
+        self.browser.get('http://localhost:5000')
         self.assertIn('Webex', self.browser.title)
 
 
