@@ -1,5 +1,5 @@
 # Webex
-This project was created by bored developers which want to make something useful.
+This project was created by bored developers who wanted to build something useful.
 ## Getting Started
 1. Clone/Fork repository on your local machine.
 2. Install dependencies. Through Pycharm (using pipenv) or with pipenv (standalone):
