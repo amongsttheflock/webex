@@ -1,17 +1,17 @@
 import unittest
+from django.test import TestCase
 from selenium import webdriver
-from webex import app
+import requests
 
 
-class BasicTestCase(unittest.TestCase):
+class BasicTestCase(TestCase):
 
     def test_server_works(self):
-        client = app.test_client(self)
-        response = client.get('/', content_type='html/text')
+        response = requests.get('http://localhost:8000')
         self.assertEqual(response.status_code, 200)
 
 
-class NewVisitorTest(unittest.TestCase):
+class NewVisitorTest(TestCase):
 
     def setUp(self):
         self.browser = webdriver.Chrome()
@@ -20,7 +20,7 @@ class NewVisitorTest(unittest.TestCase):
         self.browser.quit()
 
     def test_server_works(self):
-        self.browser.get('http://localhost:5000')
+        self.browser.get('http://localhost:8000')
         self.assertIn('Webex', self.browser.title)
 
 
